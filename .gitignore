@@ -1,0 +1,29 @@
+# Node.js / Express
+node_modules/
+dist/
+*.log
+.env
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Editors
+*.sublime-project
+*.sublime-workspace
+*.idea/
+*.swp
+*~
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Compiled Files
+*.js
+*.map
+
+# Build Output
+build/
+out/
+dist/
