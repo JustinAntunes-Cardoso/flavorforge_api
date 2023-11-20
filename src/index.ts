@@ -1,6 +1,7 @@
 import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import connectDB from './database';
+import authRoute from './routes/authRoute';
 
 const app = express();
 require('dotenv').config();
@@ -9,9 +10,6 @@ require('dotenv').config();
 connectDB();
 
 const PORT = process.env.PORT || 5050;
-
-//Routes
-//const wordRoutes = require('./routes/wordsRoute');
 
 //Middleware
 app.use(express.json());
@@ -27,7 +25,8 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 	next();
 });
 
-//app.use('/words', wordRoutes);
+//Routes
+app.use('/auth', authRoute);
 
 app.listen(PORT, () => {
 	console.log(`🚀 Server running at http://localhost:${PORT}`);
