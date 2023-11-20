@@ -2,6 +2,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import cors from 'cors';
 import connectDB from './database';
 import authRoute from './routes/authRoute';
+import recipeRoute from './routes/recipeRoute';
 
 const app = express();
 require('dotenv').config();
@@ -27,6 +28,7 @@ app.use((req: Request, res: Response, next: NextFunction) => {
 
 //Routes
 app.use('/auth', authRoute);
+app.use('/recipes', recipeRoute);
 
 app.listen(PORT, () => {
 	console.log(`🚀 Server running at http://localhost:${PORT}`);
